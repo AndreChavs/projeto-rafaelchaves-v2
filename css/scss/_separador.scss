@@ -1,0 +1,38 @@
+.separador-1{ 
+    background-image: url(/img/imagens/img-separador.jpg);    
+    padding: 3rem 0;
+    text-align: center;
+}
+.texto-separador{
+    @include type-2(16);
+    color: $white;
+    margin: 0 auto;
+    max-width: 510px;
+    padding: 0 1rem;
+}
+
+.separador-2{
+    background: $blue-dark;
+    padding: 3rem 0;
+    .sub-titulo{
+        text-align: center;
+    }    
+}
+
+.redes-icons{
+    display: flex;
+    justify-content: space-around;
+    a{  
+        width: max-content;
+        height: max-content;
+        display: block;        
+        border-radius: 50px;
+        &:hover{
+            box-shadow: .2rem .2rem .5rem $gray-light, -.2rem -.2rem .5rem $gray-light;
+        }
+    }
+    img{
+        display: block;
+    }
+}
+

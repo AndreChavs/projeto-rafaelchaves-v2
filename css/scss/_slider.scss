@@ -1,0 +1,227 @@
+.slider{
+    position: relative;
+    width: 100%;    
+}
+.myslider{
+    display: none;
+    overflow: hidden;
+    position: relative;
+}
+// setas prev e next
+#seta{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: all .5s ease-in;
+    user-select: none;
+    @include device(s){
+        svg{
+            padding: .7rem;
+        }
+    }
+    path{
+        fill:transparent;
+        stroke:$gray-light;
+        stroke-width:2px;
+        cursor: pointer;
+        &:hover{
+            stroke:$white;
+            fill: $white;
+        }
+    }
+}
+.prev, .next{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);    
+    padding: 1.5rem;
+    cursor: pointer;    
+    transition: 0.5s;
+    user-select: none;
+}
+.next{
+    right: 0;
+}
+// slide-control
+.dotsbox{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 20px;
+    cursor: pointer;
+}
+.dot{
+    display: inline-block;
+    width: 3.5rem;
+    height: 1rem;
+    border: 3px solid $gray-light;    
+    margin: 0 10px;
+    cursor: pointer;
+    &:hover{
+    background-color: $white;
+    border-color: $white;
+    }    
+}
+
+// JavaScript
+.ativo, .dot:hover{
+    border-color: $white;
+    background-color: $white;
+}
+
+// ANIMAÇÃO
+.fade{
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade{
+    from {opacity: 0.5;}
+    to {opacity: 1;}
+}
+@keyframes fade{
+    from {opacity: 0.5;}
+    to {opacity: 1;}
+}
+
+// Conteúdo Slide-Show
+.text{    
+    position: absolute;
+    color: $white;        
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-animation-name: posi;
+    -webkit-animation-duration: 2s;
+    animation-name: posi;
+    animation-duration: 2s;
+    z-index: 1;
+    text-align: center;
+    @include device(g){
+        top: 40%;
+    }
+    @include device(m){
+        top: 45%;
+    }
+    @include device(s){
+        top: 40%;
+    }
+}
+@-webkit-keyframes posi{
+    from {left: 45%;}
+    to {left: 50%;}
+}
+@keyframes posi{
+    from {left: 45%;}
+    to {left: 50%;}
+}
+.text h1{
+    
+    text-transform: uppercase;
+    color: $white;    
+    margin-bottom: 2rem;
+    @include type-2(36);
+    font-weight: 600;
+    letter-spacing: .3rem;
+    @include device(m){
+        @include type-2(24);
+    }
+    @include device(s){
+        @include type-2(24);
+    }
+    &::after{
+        content: '';
+        display: block;        
+        height: .3rem;
+        width: 15rem;
+        background: $white;
+        margin: 0 auto;        
+    }
+}
+.text p{    
+    letter-spacing: .2rem;
+    @include type-1(24);
+    font-weight: 400; 
+    color: $gray-light;
+    @include device(m){
+        @include type-1(14);
+    }
+    @include device(s){
+        @include type-1(14);
+    }   
+}
+.btn{
+    position: absolute;    
+    display: block;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    @include botao();
+    @include device(m){
+        top: 75%;
+    }
+    @include device(s){
+        top: 75%;
+    }    
+}
+.myslider img{
+    transform: scale(1.5, 1.5);
+    animation-name: zoomin;
+    -webkit-animation-name: zoomin;
+    animation-duration: 40s;
+    -webkit-animation-duration: 40s;
+    display: block;
+    width: 100%;
+    height: 100vh;
+}
+@keyframes zoomin{
+    from {transform: scale(1, 1);}
+    to {transform: scale(1.5, 1.5);}
+}
+@-webkit-keyframes zoomin{
+    from {transform: scale(1, 1);}
+    to {transform: scale(1.5, 1.5);}
+}
+
+// breakpoints conteúdo
+
+
+// @media screen and (max-width:$m-device){    
+//     .text{
+//         line-height: 2rem;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         -webkit-animation-name: posi2;
+//         -webkit-animation-duration: 2s;
+//         animation-name: posi2;
+//         animation-duration: 2s;
+//     }
+//     @-webkit-keyframes posi2 {
+//         from{top: 35%;}
+//         to{top: 50%;}
+//     }
+//     @keyframes posi2 {
+//         from{top: 35%;}
+//         to{top: 50%;}
+//     }
+//     .text h1{
+//         font-size: 2.2rem;        
+//     }
+//     .text p{
+//         font-size: 1.5rem;
+//     }
+// }
+// @media screen and (max-width:$s-device){
+//     .myslider{
+//         height: 60vh;
+//     }
+//     .text h1{
+//         font-size: 2.5rem;
+//     }
+//     .text p{
+//         font-size: 2rem;
+//     }
+// }

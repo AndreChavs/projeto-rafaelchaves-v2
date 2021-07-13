@@ -1,0 +1,54 @@
+.servicos{
+    background: $gray-light;
+    padding: 6rem 0;
+    text-align: center;
+    .texto{
+        margin-top: 5rem;
+    }
+    .botao{        
+        @include type-2(16);
+        font-weight: 600;
+        padding: 1rem 5rem;
+        border: .3rem solid $blue-dark;
+        border-radius: 50px;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        color: $blue-dark;
+        background: transparent;
+        transition: .5s;
+        &:hover{
+            border-color: $white;
+            background: $blue-dark;
+            color: $white;
+            box-shadow: 0rem 0rem .5rem $blue-dark;
+        }
+    }
+}
+.coluna-servico{
+    display: flex;
+    flex-direction: column;
+}
+.item-servico{
+    background: $white;
+    cursor: pointer;
+    padding: 2rem .5rem;
+    border-radius: .5rem;
+    margin-bottom: 3rem;
+    p{
+        @include type-2(14);        
+        @include device(g){
+            @include type-2(12);
+        }
+        @include device(m){
+            @include type-2(12);
+        }
+        @include device(s){
+            @include type-2(12);
+        }        
+    }
+    &:hover{        
+        background-color: $blue-dark;
+        color: $white;
+        box-shadow: .2rem .2rem 1rem $blue-dark;
+    }
+}

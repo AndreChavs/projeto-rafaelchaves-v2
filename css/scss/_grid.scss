@@ -1,0 +1,146 @@
+/*Variaveis Principais do Grid.scss*/
+$gutter: 20px;
+$cols: 12;
+/* o tamnaho do Device é o mesmo que do Container. Estas, portanto são variaveis de BreakPoints para cada tamanho de tela */
+$l-device:1200px;   /*Monitor Largo*/
+$g-device: 960px;   /*Monitor Normal*/
+$m-device:768px;    /*Tablets*/
+$s-device:480px;    /*SmarthPhones*/
+
+/*Configurações Gerais*/
+body{
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+/*MIXIN de BreakPoints de Responsividade - É essêncial para o controle de tela e Design*/
+@mixin device ($size) { /*@include device($)*/
+    @if $size == l {
+        @media screen and (min-width: $l-device){
+            @content;
+        }
+    }
+    @else if $size == g {
+        @media screen and (min-width: $g-device) and (max-width: $l-device - 1) {
+            @content;
+        }
+    }
+    @else if $size == m {
+        @media screen and (min-width: $m-device) and (max-width: $g-device - 1) {
+            @content;
+        }
+    }
+    @else if $size == s {
+        @media screen and (max-width: $m-device - 1) {
+            @content;
+        }
+    }    
+}
+
+
+
+/*FUNÇÕES de GRID - Calcula o tamanho de cada coluna do grid em porcentagem para cada breakPoint.*/
+@function grid ($col, $offset: false){
+    /*GRID*/
+    $width: $col / $cols * 100 + "%";
+    $result: calc(#{$width} - #{$gutter});
+    @if $offset == offset {  
+    /*OFFSET*/ 
+        $gutter: $gutter / 2;
+        $result: calc(#{$width} + #{$gutter});
+    }
+    @return $result;
+}
+
+/*Gerador de Classes GRID*/
+@for $index from 1 through $cols {
+    .grid-#{$index}{
+        width: grid($index);
+    }
+}
+
+/*MIXIN da ESTRUTURA do GRID*/
+@mixin grid-structure {
+    /*float: left;*/
+    /*min-height: 1px;*/
+    margin: 0 ($gutter / 2);
+    @include device(s){
+        width: 100%;
+        /*float: none;*/
+    }
+}
+
+/*Seletor que seleciona todos as classes que iniciam "grid-"*/
+[class^="grid-"]{
+    @include grid-structure();    
+}
+
+/*GERADOR de classes OFFSET */
+@for $index from 1 through $cols { /*para index de 1 até 12 : faça*/
+    .offset-#{$index}{  /*seletor offset-index*/
+        margin-left: grid($index, offset);  /*grid(n, string)*/
+        @extend %offset;
+    }
+}
+@include device(s){
+    %offset {
+        margin-left: 10px;
+    }
+}
+
+/*MIXIN CLEARFIX*/
+/*
+@mixin clearfix {
+    &::after, &::before{
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+*/
+
+/*MIXIN CONTAINER*/
+@mixin container {
+    max-width: $l-device;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    @include device(g){
+        max-width: $g-device;
+    }
+    /*Container para Tablet*/
+    @include device(m){
+        max-width: $m-device;
+    }
+    /*Container para Mobile*/
+    @include device(s){
+        max-width: $s-device;
+    }
+    /*@include clearfix()*/
+}
+
+.container {
+    @include container();
+}
+
+/*MIXIN ROW - Para Grid dentro de Grid*/
+@mixin row {
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    margin-left: -$gutter / 2; 
+    margin-right: -$gutter / 2;   
+    
+    /*@include device(s){}*/
+    /*@include clearfix()*/
+}
+.row{
+    @include row()
+}
