@@ -1585,6 +1585,19 @@ p.texto-sobre {
   border-radius: 50%;
 }
 
+.footer {
+  background-color: #002463;
+  padding: 10px 0;
+}
+
+.footer .footer-info p {
+  text-align: center;
+  color: #FFF;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
 html {
   font-size: 58.82%;
 }

@@ -1,0 +1,9 @@
+.footer{
+    background-color: $blue-dark;
+    padding: 10px 0;
+    .footer-info p{
+        text-align: center;
+        color: $white;
+        @include type-2(12)    
+    }
+}
