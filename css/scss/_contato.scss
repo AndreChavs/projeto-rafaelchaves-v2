@@ -19,6 +19,9 @@
     color: #000;
     text-align: center;
     padding: 2rem 0;
+    @include device(s){
+        margin-bottom: 15px
+    }
     h3{
         @include type-2(24);
         font-weight: 600;

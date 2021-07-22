@@ -1,0 +1,29 @@
+.modal-wrapper.on{
+    visibility: visible;
+    opacity: 1;
+}
+.modal-wrapper{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;        
+    top: 0;
+    left: 0;
+    display: flex;
+    background: rgba(4, 9, 17, .8);
+    
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10;
+    .modal{
+        overflow: auto;
+        padding: 20px;    
+        background: $white;
+        margin: 100px auto;
+        border-radius: .8rem;
+        .img{
+            border-radius: 15px;
+            display: block;
+            margin-bottom: 20px;            
+        }
+    }
+}

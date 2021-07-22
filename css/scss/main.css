@@ -1288,7 +1288,7 @@ p.texto-sobre {
 }
 
 .separador-1 {
-  background-image: url(/img/imagens/img-separador.jpg);
+  background-image: url("/img/imagens/img-separador.jpg");
   padding: 3rem 0;
   text-align: center;
 }
@@ -1534,6 +1534,13 @@ p.texto-sobre {
   color: #000;
   text-align: center;
   padding: 2rem 0;
+  /*@include device($)*/
+}
+
+@media screen and (max-width: 767px) {
+  .card-contato {
+    margin-bottom: 15px;
+  }
 }
 
 .card-contato h3 {
@@ -1621,6 +1628,40 @@ p.texto-sobre {
   font-family: 'Nunito', sans-serif;
   font-size: 1.2rem;
   line-height: 1.8rem;
+}
+
+.modal-wrapper.on {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: rgba(4, 9, 17, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10;
+}
+
+.modal-wrapper .modal {
+  overflow: auto;
+  padding: 20px;
+  background: #FFF;
+  margin: 100px auto;
+  border-radius: .8rem;
+}
+
+.modal-wrapper .modal .img {
+  border-radius: 15px;
+  display: block;
+  margin-bottom: 20px;
 }
 
 html {
