@@ -27,8 +27,11 @@
         height: max-content;
         display: block;        
         border-radius: 50px;
+        filter: brightness(50%);
+        transition: 0.5s ease-in;
         &:hover{
-            box-shadow: .2rem .2rem .5rem $gray-light, -.2rem -.2rem .5rem $gray-light;
+            filter: brightness(100%);
+            transition: 1s ease;
         }
     }
     img{

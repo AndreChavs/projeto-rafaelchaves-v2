@@ -1331,11 +1331,17 @@ p.texto-sobre {
   height: max-content;
   display: block;
   border-radius: 50px;
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
 }
 
 .redes-icons a:hover {
-  -webkit-box-shadow: 0.2rem 0.2rem 0.5rem #D9E0E6, -0.2rem -0.2rem 0.5rem #D9E0E6;
-          box-shadow: 0.2rem 0.2rem 0.5rem #D9E0E6, -0.2rem -0.2rem 0.5rem #D9E0E6;
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
 }
 
 .redes-icons img {
@@ -1356,6 +1362,25 @@ p.texto-sobre {
   letter-spacing: .1rem;
   max-width: 510px;
   margin: 0 auto 5rem auto;
+}
+
+.foto-area .foto-content {
+  cursor: pointer;
+  max-width: 384px;
+  margin: 0 auto;
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+}
+
+.foto-area .foto-content:hover {
+  -webkit-box-shadow: 0.6rem 0.6rem 2rem #373E53;
+          box-shadow: 0.6rem 0.6rem 2rem #373E53;
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
 }
 
 .foto-area img {
@@ -1383,15 +1408,17 @@ p.texto-sobre {
   }
 }
 
-.foto-area:hover {
-  -webkit-box-shadow: 0.5rem 0.5rem 1rem #D9E0E6;
-          box-shadow: 0.5rem 0.5rem 1rem #D9E0E6;
-}
-
 .servicos {
   background: #D9E0E6;
   padding: 6rem 0;
   text-align: center;
+}
+
+.servicos .servicos-container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .servicos .texto {
@@ -1417,21 +1444,10 @@ p.texto-sobre {
 }
 
 .servicos .botao:hover {
-  border-color: #FFF;
   background: #002463;
   color: #FFF;
   -webkit-box-shadow: 0rem 0rem 0.5rem #002463;
           box-shadow: 0rem 0rem 0.5rem #002463;
-}
-
-.coluna-servico {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .item-servico {
@@ -1440,6 +1456,15 @@ p.texto-sobre {
   padding: 2rem .5rem;
   border-radius: .5rem;
   margin-bottom: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .item-servico p {
