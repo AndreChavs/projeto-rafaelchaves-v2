@@ -1466,6 +1466,9 @@ p.texto-sobre {
   background: #FFF;
   padding: 2rem 1.5rem;
   display: block;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   color: #002463;
   font-family: 'Nunito', sans-serif;
   font-size: 1.4rem;
@@ -1664,15 +1667,19 @@ p.texto-sobre {
   display: block;
 }
 
-.modal-wrapper .modal h1 {
+.modal-wrapper .modal .title-modal {
   font-family: 'Nunito', sans-serif;
   font-size: 2.4rem;
   line-height: 3.6rem;
   letter-spacing: .1rem;
   font-weight: 600;
   margin-top: 1.5rem;
+  margin-bottom: 2rem;
   text-transform: uppercase;
   text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .modal-wrapper .modal .texto {

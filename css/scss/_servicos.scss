@@ -29,13 +29,14 @@
 .item-servico{
     margin-bottom: 3rem;
     display: flex;    
-    justify-content: center;
+    justify-content: center;    
     a{
         text-align: center;
         border-radius: .5rem;
         background: $white;    
         padding: 2rem 1.5rem;
         display: block;
+        flex: 1 1 auto;
         color: $blue-dark;
         @include type-2(14);        
         @include device(g){

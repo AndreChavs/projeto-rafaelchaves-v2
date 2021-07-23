@@ -2,6 +2,7 @@
     visibility: visible;
     opacity: 1;
 }
+
 .modal-wrapper{
     position: fixed;
     width: 100vw;
@@ -9,8 +10,7 @@
     top: 0;
     left: 0;
     display: flex;
-    background: rgba(4, 9, 17, .8);
-    
+    background: rgba(4, 9, 17, .8);    
     visibility: hidden;
     opacity: 0;
     z-index: 10;
@@ -24,12 +24,14 @@
             border-radius: 15px;
             display: block;                        
         }
-        h1{
+        .title-modal{
             @include type-2(24);
             font-weight: 600;
             margin-top: 1.5rem;
+            margin-bottom: 2rem;
             text-transform: uppercase;
             text-align: center;
+            flex: 1 1 auto;
         }
         .texto{
             max-width: max-content;
