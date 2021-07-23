@@ -13,7 +13,7 @@ const modalWrapperTrab = document.getElementsByClassName('modal-wrapper')[1]
 
 // ------------ Eventos do Mapeamento --------------
             //a) listener para abrir Abrir
-civilModal.forEach( (event) => {
+civilModal.forEach( event => {
     //Faz-se necerssário o uso do forEach devido a seleção de mais de 1 elemento do documento html. -> SelectorAll
     event.addEventListener('click', () => {
         abrir('civil')
