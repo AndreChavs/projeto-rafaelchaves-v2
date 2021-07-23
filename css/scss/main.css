@@ -1425,7 +1425,7 @@ p.texto-sobre {
   margin-top: 5rem;
 }
 
-.servicos .botao {
+.botao {
   font-family: 'Nunito', sans-serif;
   font-size: 1.6rem;
   line-height: 2.26rem;
@@ -1443,7 +1443,7 @@ p.texto-sobre {
   transition: .5s;
 }
 
-.servicos .botao:hover {
+.botao:hover {
   background: #002463;
   color: #FFF;
   -webkit-box-shadow: 0rem 0rem 0.5rem #002463;
@@ -1451,23 +1451,22 @@ p.texto-sobre {
 }
 
 .item-servico {
-  background: #FFF;
-  cursor: pointer;
-  padding: 2rem .5rem;
-  border-radius: .5rem;
   margin-bottom: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.item-servico p {
+.item-servico a {
+  text-align: center;
+  border-radius: .5rem;
+  background: #FFF;
+  padding: 2rem 1.5rem;
+  display: block;
+  color: #002463;
   font-family: 'Nunito', sans-serif;
   font-size: 1.4rem;
   line-height: 1.96rem;
@@ -1479,7 +1478,7 @@ p.texto-sobre {
 }
 
 @media screen and (min-width: 960px) and (max-width: 1199px) {
-  .item-servico p {
+  .item-servico a {
     font-family: 'Nunito', sans-serif;
     font-size: 1.2rem;
     line-height: 1.8rem;
@@ -1487,24 +1486,26 @@ p.texto-sobre {
 }
 
 @media screen and (min-width: 768px) and (max-width: 959px) {
-  .item-servico p {
+  .item-servico a {
     font-family: 'Nunito', sans-serif;
     font-size: 1.2rem;
     line-height: 1.8rem;
+    color: #002463;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .item-servico p {
+  .item-servico a {
     font-family: 'Nunito', sans-serif;
     font-size: 1.2rem;
     line-height: 1.8rem;
+    color: #002463;
   }
 }
 
-.item-servico:hover {
-  background-color: #002463;
+.item-servico a:hover {
   color: #FFF;
+  background: #002463;
   -webkit-box-shadow: 0.2rem 0.2rem 1rem #002463;
           box-shadow: 0.2rem 0.2rem 1rem #002463;
 }
@@ -1653,7 +1654,7 @@ p.texto-sobre {
 .modal-wrapper .modal {
   overflow: auto;
   padding: 20px;
-  background: #FFF;
+  background: #D9E0E6;
   margin: 100px auto;
   border-radius: .8rem;
 }
@@ -1661,7 +1662,58 @@ p.texto-sobre {
 .modal-wrapper .modal .img {
   border-radius: 15px;
   display: block;
-  margin-bottom: 20px;
+}
+
+.modal-wrapper .modal h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+  letter-spacing: .1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.modal-wrapper .modal .texto {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.modal-wrapper .modal a.botao {
+  margin: 0 auto;
+  border-color: #373E53;
+}
+
+.modal-wrapper .modal a.botao:hover {
+  background-color: #373E53;
+}
+
+.modal-wrapper .modal .btn-esc {
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  padding-top: .4rem;
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  background: red;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFF;
+  position: absolute;
+  right: 2rem;
+  z-index: 30;
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
+}
+
+.modal-wrapper .modal .btn-esc:hover {
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
 }
 
 html {

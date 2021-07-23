@@ -8,50 +8,53 @@
     .texto{
         margin-top: 5rem;
     }
-    .botao{        
-        @include type-2(16);
-        font-weight: 600;
-        padding: 1rem 5rem;
-        border: .3rem solid $blue-dark;
-        border-radius: 50px;
-        text-transform: uppercase;
-        letter-spacing: .1rem;
-        color: $blue-dark;
-        background: transparent;
-        transition: .5s;
-        &:hover{            
-            background: $blue-dark;
-            color: $white;
-            box-shadow: 0rem 0rem .5rem $blue-dark;
-        }
+}
+.botao{        
+    @include type-2(16);
+    font-weight: 600;
+    padding: 1rem 5rem;
+    border: .3rem solid $blue-dark;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: $blue-dark;
+    background: transparent;
+    transition: .5s;
+    &:hover{            
+        background: $blue-dark;
+        color: $white;
+        box-shadow: 0rem 0rem .5rem $blue-dark;
     }
 }
-
-
 .item-servico{
-    background: $white;
-    cursor: pointer;
-    padding: 2rem .5rem;
-    border-radius: .5rem;
     margin-bottom: 3rem;
-    display: flex;
-    align-items: center;
+    display: flex;    
     justify-content: center;
-    p{
+    a{
+        text-align: center;
+        border-radius: .5rem;
+        background: $white;    
+        padding: 2rem 1.5rem;
+        display: block;
+        color: $blue-dark;
         @include type-2(14);        
         @include device(g){
             @include type-2(12);
+            
         }
         @include device(m){
             @include type-2(12);
+            color: $blue-dark;
         }
         @include device(s){
             @include type-2(12);
-        }        
+            color: $blue-dark;
+        } 
+        &:hover{
+            color: $white;
+            background: $blue-dark;
+            box-shadow: .2rem .2rem 1rem $blue-dark;
+        }       
     }
-    &:hover{        
-        background-color: $blue-dark;
-        color: $white;
-        box-shadow: .2rem .2rem 1rem $blue-dark;
-    }
+    
 }
